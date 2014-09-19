@@ -13,6 +13,7 @@
 
 <div><%= image_tag @post.avatar.url %></div><br>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<% if is_my_post?(@post) %>
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>
